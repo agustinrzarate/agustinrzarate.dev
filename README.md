@@ -1,10 +1,8 @@
 # Agustin Zarate - Personal Portfolio
 
+## Design
+This is the idea that I want to do!
 ![Portfolio Design](public/portfolio-design.png)
-
-A modern, responsive personal portfolio website showcasing my work as a Frontend Developer & UX/UI Designer.
-
-
 
 ## 📋 About Me
 

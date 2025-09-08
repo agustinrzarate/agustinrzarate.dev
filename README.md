@@ -1,13 +1,10 @@
-
 # Agustin Zarate - Personal Portfolio
 
 ![Portfolio Design](public/portfolio-design.png)
 
 A modern, responsive personal portfolio website showcasing my work as a Frontend Developer & UX/UI Designer.
 
-## 🚀 Live Demo
 
-[Visit my portfolio](https://agustinrzarate.dev) _(Coming soon)_
 
 ## 📋 About Me
 
@@ -21,34 +18,17 @@ I also took part in Intel Partner Marketing Studio, a global platform for managi
 
 At GOIAR I was selected by my peers as one of three leaders of the frontend community. In that role, we coordinated and delivered internal training sessions on hexagonal architecture, clean architecture, frontend design patterns, and criteria for selecting technologies based on the context of each project.
 
-## 🛠️ Technologies
+## My skills
+**Frameworks and Libraries**: React js, React Native and Next js. Others: Angular, Vue.js.
+**Frameworks CSS**: Material UI, Prime React,Bulma, Next UI, Ant Design, Tailwind.
+**CSS solutions**: styled components, sass -scss, css modules. 
+**Testing tools**: Jest, React Testing Library, playwright. 
+**Version Control**: Git, GitHub, BitBucket, AWSCodeCommit. 
+**Project Management**: Scrum, Kanban. 
+**Collaboration and Communication**: Jira,Trello, Slack. 
+**Architectures most implemented**: CleanArchitecture, Hexagonal. 
+**Design tool**: Figma.
 
-### Current Stack
-
-- **Frontend Framework**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS
-- **UI Components**: Custom components with shadcn/ui
-- **Development**: ESLint, TypeScript strict mode
-
-### Planned Technologies
-
-- **Backend**: Express.js with TypeScript
-- **Database**: PostgreSQL with Prisma ORM
-- **Authentication**: NextAuth.js or Auth0
-- **Email Service**: Nodemailer or SendGrid
-- **Deployment**: Vercel (Frontend) + Railway/Render (Backend)
-- **Analytics**: Google Analytics 4
-- **SEO**: Next.js with App Router (future migration)
-
-## 🎨 Design
-
-The portfolio features a clean, modern design with:
-
-- **Color Scheme**: Purple accents with yellow highlights on white background
-- **Typography**: Modern, readable fonts with clear hierarchy
-- **Layout**: Responsive design optimized for all devices
-- **UX**: Intuitive navigation and smooth user interactions
 
 ## 📁 Project Structure
 
@@ -114,21 +94,14 @@ pnpm build
 - 🔄 Contact form (planned)
 - 🔄 Blog section (planned)
 - 🔄 Dark mode toggle (planned)
-- 🔄 Performance optimization (planned)
 
 ## 🤝 Contributing
 
-This is a personal portfolio project, but suggestions and feedback are welcome! Feel free to open an issue or submit a pull request.
+This is a personal portfolio project, but suggestions and feedback are welcome! 
 
-## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
-
-## 📞 Contact
-
-- **Email**: pietro.schirano@gmail.com
+- **Email**: agustinrzarate@gmail.com
 - **LinkedIn**: [agustin-zarate](https://linkedin.com/in/agustin-zarate)
-- **Portfolio**: [agustinrzarate.dev](https://agustinrzarate.dev)
 
 ---
 

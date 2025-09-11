@@ -126,7 +126,7 @@ html {
     @apply flex justify-center h-svh  px-12;
   }
   .container-content {
-    @apply max-w-[1200px] grow py-28;
+    @apply max-w-[1200px] grow py-28 max-h-full;
   }
 }
 
@@ -156,4 +156,26 @@ html {
 
 .animate-fade-in-down {
   animation: fadeInDown 0.8s ease-out forwards;
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+@keyframes grow {
+  0% {
+    width: 0rem;
+  }
+  100% {
+    width: 1rem;
+  }
+}
+
+.animate-grow {
+  animation: grow 1s ease-out forwards;
 }

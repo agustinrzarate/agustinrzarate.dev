@@ -16,7 +16,7 @@ export default function LazoAnimation() {
 
     // Dispara la animación
     requestAnimationFrame(() => {
-      path.style.transition = "stroke-dashoffset 3s ease-in-out";
+      path.style.transition = "stroke-dashoffset 2s ease-in-out";
       path.style.strokeDashoffset = "0";
     });
   }, []);
@@ -27,8 +27,8 @@ export default function LazoAnimation() {
         viewBox="0 0 607 792"
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
-        height="700"
-        preserveAspectRatio="none" // ocupa todo el contenedor, aunque se deforme
+        height="800"
+        preserveAspectRatio="none"
       >
         <path
           ref={pathRef}

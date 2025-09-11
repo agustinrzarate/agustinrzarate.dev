@@ -2,10 +2,13 @@ import Typography from "../ui/typography";
 
 function About() {
   return (
-    <div className="container-section bg-violet-600">
+    <div
+      id="about"
+      className="container-section bg-violet-600 h-full flex items-center"
+    >
       <div className="container-content flex-1  animate-fade-in-down">
-        <div className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-between gap-12 md:gap-16">
-          <div className="flex-1 text-center md:text-left space-y-8 max-w-[600px]">
+        <div className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-between md:gap-9">
+          <div className="flex-2/3 text-center md:text-left space-y-8 max-w-[600px]">
             <Typography.H2 className="max-w-[210px] text-yellow-300">
               Over the years,
             </Typography.H2>
@@ -28,7 +31,7 @@ function About() {
               occasionally enjoy crafting UIs with FIGMA.
             </Typography.P>
           </div>
-          <div className="hidden lg:block min-w-[320px]">
+          <div className="hidden lg:block min-w-[320px] flex-1/3">
             <img
               src="/src/assets/about-image.png"
               alt="About image"

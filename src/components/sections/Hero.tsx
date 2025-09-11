@@ -2,7 +2,7 @@ import Typography from "../ui/typography";
 
 function Hero() {
   return (
-    <div className="container-section">
+    <div id="hero" className="container-section h-full flex items-center">
       <div className="container-content flex flex-col py-28 gap-6 animate-fade-in-down">
         <div className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-between gap-8 md:gap-12">
           <div className="max-w-[592px] text-center md:text-left">

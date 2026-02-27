@@ -1,4 +1,6 @@
 import Typography from "../ui/typography";
+import profileBackground from "@/assets/profile-background.svg";
+import profilePicture from "@/assets/profile-picture.png";
 
 function Hero() {
   return (
@@ -24,7 +26,7 @@ function Hero() {
           </div>
           <div className="relative flex-shrink-0">
             <img
-              src="/src/assets/profile-background.svg"
+              src={profileBackground}
               alt="Profile background"
               className="animate-spin-slow"
               style={{
@@ -46,7 +48,7 @@ function Hero() {
               </Typography.P>
             </div>
             <img
-              src="/src/assets/profile-picture.png"
+              src={profilePicture}
               alt="Profile picture"
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full"
               style={{

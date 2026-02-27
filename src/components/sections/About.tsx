@@ -1,4 +1,5 @@
 import Typography from "../ui/typography";
+import aboutImage from "@/assets/about-image.png";
 
 function About() {
   return (
@@ -33,7 +34,7 @@ function About() {
           </div>
           <div className="hidden w-full md:w-1/3 lg:flex justify-end">
             <img
-              src="/src/assets/about-image.png"
+              src={aboutImage}
               alt="About image"
               style={{
                 width: "clamp(300px, 20vw, 445px)",

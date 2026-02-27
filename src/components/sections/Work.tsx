@@ -119,7 +119,7 @@ function Work({ activeSection }: WorkProps) {
       work.forEach((_, index) => {
         setTimeout(() => {
           setVisibleCards((prev) => [...prev, index]);
-        }, 800 + index * 500); // 1500ms inicial + 500ms entre cada card
+        }, 800 + index * 200); // 1500ms inicial + 500ms entre cada card
       });
     }
   }, [activeSection, hasRendered, work]);
@@ -127,7 +127,7 @@ function Work({ activeSection }: WorkProps) {
   return (
     <div
       id="work"
-      className="container-section h-full  flex items-center py-12"
+      className="container-section h-full  flex items-center py-12 snap-start"
     >
       <div className="container-content relative p-6 bg-white max-w-[1248px] h-full flex flex-col overflow-clip">
         <div className="flex-shrink-0 relative mb-6">

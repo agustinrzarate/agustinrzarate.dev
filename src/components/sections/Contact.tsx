@@ -1,11 +1,16 @@
+import { Loader } from "../ui/Loader";
 import Typography from "../ui/typography";
 
 function Contact() {
   return (
-    <div id="contact" className="container-section flex-col bg-white p-0">
+    <div
+      id="contact"
+      className="container-section flex-col bg-white p-0 snap-start"
+    >
       <div className="container-content mx-auto flex-1 ">
         <div className="flex flex-col items-center justify-center">
           <Typography.H2>Let's talk!</Typography.H2>
+          <Loader />
         </div>
       </div>
       <div className="bg-violet-800 min-h-56 ">

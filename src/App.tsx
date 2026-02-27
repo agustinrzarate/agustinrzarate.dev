@@ -1,33 +1,36 @@
-import Hero from "./components/sections/Hero";
-import About from "./components/sections/About";
-import Work from "./components/sections/Work";
+import { lazy, Suspense } from "react";
 import ScrollIndicator from "./components/ui/ScrollIndicator";
-import { useScrollDetection } from "./hooks/useScrollDetection";
-import Contact from "./components/sections/Contact";
+import { SuspenseLoader } from "./components/ui/SuspenseLoader";
+import { useActiveSection } from "./hooks/useActiveSection";
 
-function App() {
-  const sections = ["hero", "about", "work"];
-  const { activeSection, setActiveSection } = useScrollDetection({ sections });
+const Hero = lazy(() => import("./components/sections/Hero"));
+const About = lazy(() => import("./components/sections/About"));
+const Work = lazy(() => import("./components/sections/Work"));
+const Contact = lazy(() => import("./components/sections/Contact"));
+
+// Content that mounts only after lazy sections have loaded, so useActiveSection
+// runs when hero/about/work/contact elements already exist in the DOM.
+function AppContent() {
+  const activeSection = useActiveSection();
 
   return (
-    <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth scrollbar-hide">
-      <ScrollIndicator
-        activeSection={activeSection}
-        onSectionChange={setActiveSection}
-      />
-      <div className="h-screen snap-start">
+    <>
+      <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth scrollbar-hide">
         <Hero />
-      </div>
-      <div className="h-screen snap-start">
         <About />
-      </div>
-      <div className="h-screen snap-start">
         <Work activeSection={activeSection} />
-      </div>
-      <div className="h-screen snap-start">
         <Contact />
       </div>
-    </div>
+      <ScrollIndicator activeSection={activeSection} />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Suspense fallback={<SuspenseLoader />}>
+      <AppContent />
+    </Suspense>
   );
 }
 

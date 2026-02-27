@@ -4,16 +4,16 @@ function About() {
   return (
     <div
       id="about"
-      className="container-section bg-violet-600 h-full flex items-center"
+      className="container-section bg-violet-600 h-full flex items-center snap-start"
     >
       <div className="container-content flex-1  animate-fade-in-down">
         <div className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-between md:gap-9">
-          <div className="flex-2/3 text-center md:text-left space-y-8 max-w-[600px]">
+          <div className="w-full lg:w-2/3 text-center md:text-left space-y-8">
             <Typography.H2 className="max-w-[210px] text-yellow-300">
               Over the years,
             </Typography.H2>
             <Typography.P className="text-white font-semibold">
-              I’ve built products for companies related to the fintetch world
+              I've built products for companies related to the fintetch world
               such as virtual wallets and financial solutions to design and
               optimize financial products. <br /> <br />
               I also took part in Intel Partner Marketing Studio, a global
@@ -25,13 +25,13 @@ function About() {
               internal training sessions on hexagonal architecture, clean
               architecture, frontend design patterns, and criteria for selecting
               technologies based on the context of each project. <br /> <br />
-              I’m a frontend developer with a strong focus on scalability,
+              I'm a frontend developer with a strong focus on scalability,
               performance optimization, and building maintainable solutions. My
               main stack includes React.js, Next.js, TypeScript, Tailwind, and I
               occasionally enjoy crafting UIs with FIGMA.
             </Typography.P>
           </div>
-          <div className="hidden lg:block min-w-[320px] flex-1/3">
+          <div className="hidden w-full md:w-1/3 lg:flex justify-end">
             <img
               src="/src/assets/about-image.png"
               alt="About image"

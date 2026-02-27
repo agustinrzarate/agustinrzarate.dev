@@ -36,7 +36,7 @@ export default function LazoAnimation() {
           stroke="#7C3AED"
           strokeWidth={4}
           strokeLinecap="round"
-          fill="none" // 🔑 IMPORTANTE: evita que se pinte sólido
+          fill="none"
           vectorEffect="non-scaling-stroke"
         />
       </svg>

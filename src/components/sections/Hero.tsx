@@ -2,17 +2,25 @@ import Typography from "../ui/typography";
 
 function Hero() {
   return (
-    <div id="hero" className="container-section h-full flex items-center">
+    <div
+      id="hero"
+      className="container-section snap-start h-full flex items-center"
+    >
       <div className="container-content flex flex-col py-28 gap-6 animate-fade-in-down">
         <div className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-between gap-8 md:gap-12">
-          <div className="max-w-[592px] text-center md:text-left">
+          <div className="max-w-[592px] text-center md:text-left space-y-6">
             <Typography.H1 className="max-w-[500px] mx-auto md:mx-0">
               Frontend Developer & UX/UI Designer
             </Typography.H1>
-            <Typography.H4 className="mt-4">
+            <h2
+              className="scroll-m-20 font-semibold tracking-tight text-slate-600"
+              style={{
+                fontSize: "clamp(1rem, 3vw, 1.5rem)",
+              }}
+            >
               I like to build solid, scalable, and fluid applications with great
               user experiences.
-            </Typography.H4>
+            </h2>
           </div>
           <div className="relative flex-shrink-0">
             <img

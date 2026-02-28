@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import Typography from "../ui/typography";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
@@ -173,10 +173,9 @@ function Contact() {
           <Typography.P className="text-yellow-300 font-semibold">
             SAY HELLO! 👋
           </Typography.P>
-          <a href="mailto:agustinrzarate@gmail.com">
-            <Typography.P className="text-white">
-              agustinrzarate@gmail.com
-            </Typography.P>
+          <a href="https://www.linkedin.com/in/agustin-zarate/" className="flex gap-2 border-b border-white pb-2 w-40" target="_blank">
+          <Linkedin color="white" />
+          <span className="text-white">agustin-zarate</span>
           </a>
         </div>
       </div>

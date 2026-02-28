@@ -12,7 +12,7 @@ function Hero() {
         <div className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-between gap-8 md:gap-12">
           <div className="max-w-[592px] text-center md:text-left space-y-6">
             <Typography.H1 className="max-w-[500px] mx-auto md:mx-0">
-              Frontend Developer & UX/UI Designer
+            Frontend engineer & UX/UI developer
             </Typography.H1>
             <h2
               className="scroll-m-20 font-semibold tracking-tight text-slate-600"

@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { Resend } from "resend";
-import { consumeToken } from "../src/lib/contactToken";
-import { validateContactPayload } from "../src/lib/contactValidation";
+import { consumeToken } from "./_contactToken.js";
+import { validateContactPayload } from "./_contactValidation.js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 

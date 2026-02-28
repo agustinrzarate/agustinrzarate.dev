@@ -1,11 +1,7 @@
 /// <reference types="node" />
 import { Resend } from "resend";
-
-const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY);
-
-const CONTACT_TO = import.meta.env.VITE_CONTACT_TO ?? "agustinrzarate@gmail.com";
-const CONTACT_FROM =
-  import.meta.env.VITE_CONTACT_FROM ?? "Contact <onboarding@resend.dev>";
+import { checkRateLimit } from "./rateLimit";
+import { validateContactPayload } from "./contactValidation";
 
 function escapeHtml(text: string): string {
   return text
@@ -19,30 +15,55 @@ export type SendContactEmailResult =
   | { success: true; id?: string }
   | { success: false; error: string };
 
-export async function sendContactEmail(body: {
-  name?: string;
-  email?: string;
-  message?: string;
-}): Promise<SendContactEmailResult> {
-  if (!import.meta.env.VITE_RESEND_API_KEY) {
+export async function sendContactEmail(
+  body: {
+    name?: string;
+    email?: string;
+    message?: string;
+    fax?: string;
+    _token?: string;
+    _formReadyAt?: number;
+  },
+  clientIp?: string
+): Promise<SendContactEmailResult> {
+  if (clientIp && !checkRateLimit(clientIp).allowed) {
+    return { success: false, error: "Too many requests. Please try again later." };
+  }
+
+  const honeypot = typeof body.fax === "string" ? body.fax.trim() : "";
+  if (honeypot) {
+    return { success: false, error: "Invalid submission" };
+  }
+
+  const validation = validateContactPayload(body);
+  if (!validation.ok) {
+    return { success: false, error: validation.error };
+  }
+
+  const apiKey =
+    process.env.RESEND_API_KEY?.trim() ||
+    process.env.VITE_RESEND_API_KEY?.trim();
+  if (!apiKey) {
     return { success: false, error: "Email service is not configured" };
   }
 
-  const nameStr = typeof body.name === "string" ? body.name.trim() : "";
-  const emailStr = typeof body.email === "string" ? body.email.trim() : "";
-  const messageStr =
-    typeof body.message === "string" ? body.message.trim() : "";
+  const nameStr = (body.name ?? "").trim();
+  const emailStr = (body.email ?? "").trim();
+  const messageStr = (body.message ?? "").trim();
 
-  if (!nameStr || !emailStr || !messageStr) {
-    return {
-      success: false,
-      error: "Name, email, and message are required",
-    };
-  }
+  const resend = new Resend(apiKey);
+  const contactTo =
+    process.env.CONTACT_TO?.trim() ||
+    process.env.VITE_CONTACT_TO?.trim() ||
+    "agustinrzarate@gmail.com";
+  const contactFrom =
+    process.env.CONTACT_FROM?.trim() ||
+    process.env.VITE_CONTACT_FROM?.trim() ||
+    "Contact <onboarding@resend.dev>";
 
   const { data, error } = await resend.emails.send({
-    from: CONTACT_FROM,
-    to: [CONTACT_TO],
+    from: contactFrom,
+    to: [contactTo],
     replyTo: [emailStr],
     subject: `Contact from ${nameStr} (${emailStr})`,
     html: `
@@ -55,6 +76,5 @@ export async function sendContactEmail(body: {
   if (error) {
     return { success: false, error: error.message ?? "Failed to send email" };
   }
-
   return { success: true, id: data?.id };
 }

@@ -15,6 +15,7 @@ function AppContent() {
 
   return (
     <>
+
       <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth scrollbar-hide">
         <Hero />
         <About />

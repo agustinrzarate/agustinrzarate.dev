@@ -21,7 +21,7 @@ const D = (ms: number): React.CSSProperties => ({ animationDelay: `${ms}ms` });
 function Hero() {
   return (
     <div id="hero" className="container-section snap-start bg-[#fafaf8] pt-16">
-      <div className="container-content flex flex-col justify-center gap-8">
+      <div className="container-content flex flex-col justify-center gap-6 sm:gap-8">
         {/* Badge */}
         <div className="anim-blur-up" style={D(200)}>
           <span className="inline-flex items-center gap-2 bg-white/70 border border-black/10 rounded-full px-4 py-1.5 text-sm font-medium text-gray-700">
@@ -31,7 +31,7 @@ function Hero() {
 
         <div className="flex flex-col lg:flex-row items-start justify-between gap-10 lg:gap-16">
           {/* Left — text */}
-          <div className="space-y-6 max-w-xl">
+          <div className="space-y-4 sm:space-y-6 max-w-xl">
             <h1
               className="leading-none font-extrabold"
               style={{ fontSize: "clamp(2.5rem, 9vw, 6.5rem)" }}
@@ -65,14 +65,14 @@ function Hero() {
               user experiences.
             </p>
             <p
-              className="text-gray-600 text-sm leading-relaxed anim-fade-up"
+              className="hidden sm:block text-gray-600 text-sm leading-relaxed anim-fade-up"
               style={D(780)}
             >
               Experienced in guiding teams through architectural decisions to
               ensure scalable and maintainable products.
             </p>
             <p
-              className="text-gray-600 text-sm leading-relaxed anim-fade-up"
+              className="hidden sm:block text-gray-600 text-sm leading-relaxed anim-fade-up"
               style={D(840)}
             >
               Skilled at transforming complex requirements into simple,

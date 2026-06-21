@@ -139,14 +139,14 @@ function Work() {
                 style={{ animationDelay: `${400 + i * 120}ms` }}
               >
                 {/* Year range */}
-                <div className="w-28 flex-shrink-0 text-right pr-4 pt-1">
+                <div className="w-28 shrink-0 text-right pr-4 pt-1">
                   <span className="text-xs text-gray-400 font-medium leading-snug whitespace-nowrap">
                     {item.years}
                   </span>
                 </div>
 
                 {/* Dot with outer ring — container stays w-3 to keep alignment with line */}
-                <div className="w-3 flex-shrink-0 flex items-center justify-center mt-1 relative z-10">
+                <div className="w-3 shrink-0 flex items-center justify-center mt-1 relative z-10">
                   {/* Outer ring overflows via absolute, doesn't shift layout */}
                   <div className="absolute w-5 h-5 rounded-full bg-violet-500/20 border border-violet-400/30" />
                   <div className="w-2.5 h-2.5 rounded-full bg-violet-700 relative z-10" />

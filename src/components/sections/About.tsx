@@ -25,7 +25,7 @@ function About() {
         className="container-content flex flex-col md:flex-row items-center gap-12 md:gap-16"
       >
         {/* Left — text */}
-        <div className="flex-1 space-y-8">
+        <div className="flex-1 space-y-4 sm:space-y-8">
           <p
             className={`text-xs font-semibold text-white/40 uppercase tracking-[0.2em] flex items-center gap-2 ${inView ? "anim-fade-up" : "opacity-0"}`}
             style={{ animationDelay: "100ms" }}
@@ -42,11 +42,13 @@ function About() {
             Over the years,
           </h2>
 
-          <div className="space-y-4 text-white/75 text-sm leading-relaxed">
+          <div className="space-y-3 sm:space-y-4 text-white/75 text-sm leading-relaxed">
             {PARAGRAPHS.map((p, i) => (
               <p
                 key={i}
-                className={inView ? "anim-fade-left" : "opacity-0"}
+                className={`${i === 2 ? "hidden sm:block" : ""} ${
+                  inView ? "anim-fade-left" : "opacity-0"
+                }`}
                 style={{ animationDelay: `${320 + i * 100}ms` }}
               >
                 {p}

@@ -62,7 +62,9 @@ function Contact() {
       .catch(() => {});
   }, []);
 
-  function handleBlur(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  function handleBlur(
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
     const { name, value } = e.target;
     setTouched((prev) => ({ ...prev, [name]: true }));
 
@@ -82,7 +84,9 @@ function Contact() {
     }
   }
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
     if (!touched[e.target.name]) return;
     const form = e.target.form;
     if (!form) return;
@@ -153,14 +157,20 @@ function Contact() {
   }
 
   return (
-    <div id="contact" className="container-section flex-col bg-white p-0 snap-start">
-
-      <div ref={ref} className="container-content mx-auto flex-1">
+    <div
+      id="contact"
+      className="container-section flex-col bg-white p-0 snap-start"
+    >
+      <div
+        ref={ref}
+        className="container-content mx-auto flex-1 px-6 sm:px-8 md:px-12"
+      >
         <div className="flex flex-col max-w-2xl">
-
           {/* Section label */}
           <p
-            className={`text-xs font-semibold text-gray-400 uppercase tracking-[0.2em] flex items-center gap-2 mb-6 ${inView ? "anim-fade-up" : "opacity-0"}`}
+            className={`text-xs font-semibold text-gray-400 uppercase tracking-[0.2em] flex items-center gap-2 mb-4 sm:mb-6 ${
+              inView ? "anim-fade-up" : "opacity-0"
+            }`}
             style={{ animationDelay: "100ms" }}
           >
             <span>04</span>
@@ -170,18 +180,26 @@ function Contact() {
 
           {/* Heading */}
           <h2
-            className={`font-extrabold leading-tight mb-3 ${inView ? "anim-blur-up" : "opacity-0"}`}
-            style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", animationDelay: "200ms" }}
+            className={`font-extrabold leading-tight mb-3 ${
+              inView ? "anim-blur-up" : "opacity-0"
+            }`}
+            style={{
+              fontSize: "clamp(2rem, 5vw, 3.5rem)",
+              animationDelay: "200ms",
+            }}
           >
             <span className="text-gray-900">Let's </span>
             <span className="text-violet-600">talk!</span>
           </h2>
 
           <p
-            className={`text-gray-500 text-sm leading-relaxed mb-8 ${inView ? "anim-fade-up" : "opacity-0"}`}
+            className={`text-gray-500 text-sm leading-relaxed mb-6 sm:mb-8 ${
+              inView ? "anim-fade-up" : "opacity-0"
+            }`}
             style={{ animationDelay: "320ms" }}
           >
-            Have a project in mind or want to discuss an opportunity?<br />
+            Have a project in mind or want to discuss an opportunity?
+            <br />
             Send me a message and I'll get back to you within 24 hours.
           </p>
 
@@ -189,22 +207,33 @@ function Contact() {
           <form
             onSubmit={handleSubmit}
             noValidate
-            className={`space-y-5 ${inView ? "anim-fade-up" : "opacity-0"}`}
+            className={`space-y-4 sm:space-y-5 ${
+              inView ? "anim-fade-up" : "opacity-0"
+            }`}
             style={{ animationDelay: "440ms" }}
           >
             {/* Honeypot */}
             <div
-              className="absolute -left-[9999px] top-0 h-px w-px overflow-hidden opacity-0"
+              className="absolute left-[-9999px] top-0 h-px w-px overflow-hidden opacity-0"
               aria-hidden="true"
             >
               <label htmlFor="fax">Fax</label>
-              <Input id="fax" name="fax" type="text" tabIndex={-1} autoComplete="off" />
+              <Input
+                id="fax"
+                name="fax"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+              />
             </div>
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               {/* Name */}
               <div className="space-y-1.5">
-                <label htmlFor="name" className="text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="name"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Name
                 </label>
                 <Input
@@ -215,7 +244,9 @@ function Contact() {
                   onBlur={handleBlur}
                   onChange={handleChange}
                   aria-invalid={touched.name && !!fieldErrors.name}
-                  aria-describedby={touched.name && fieldErrors.name ? "name-error" : undefined}
+                  aria-describedby={
+                    touched.name && fieldErrors.name ? "name-error" : undefined
+                  }
                   className={`h-11 bg-gray-50 focus:bg-white transition-colors ${
                     touched.name && fieldErrors.name
                       ? "border-red-400 focus-visible:ring-red-300"
@@ -223,7 +254,11 @@ function Contact() {
                   }`}
                 />
                 {touched.name && fieldErrors.name && (
-                  <p id="name-error" role="alert" className="text-xs text-red-500 flex items-center gap-1">
+                  <p
+                    id="name-error"
+                    role="alert"
+                    className="text-xs text-red-500 flex items-center gap-1"
+                  >
                     <span aria-hidden="true">⚠</span> {fieldErrors.name}
                   </p>
                 )}
@@ -231,7 +266,10 @@ function Contact() {
 
               {/* Email */}
               <div className="space-y-1.5">
-                <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                <label
+                  htmlFor="email"
+                  className="text-sm font-medium text-gray-700"
+                >
                   Email
                 </label>
                 <Input
@@ -243,7 +281,11 @@ function Contact() {
                   onBlur={handleBlur}
                   onChange={handleChange}
                   aria-invalid={touched.email && !!fieldErrors.email}
-                  aria-describedby={touched.email && fieldErrors.email ? "email-error" : undefined}
+                  aria-describedby={
+                    touched.email && fieldErrors.email
+                      ? "email-error"
+                      : undefined
+                  }
                   className={`h-11 bg-gray-50 focus:bg-white transition-colors ${
                     touched.email && fieldErrors.email
                       ? "border-red-400 focus-visible:ring-red-300"
@@ -251,7 +293,11 @@ function Contact() {
                   }`}
                 />
                 {touched.email && fieldErrors.email && (
-                  <p id="email-error" role="alert" className="text-xs text-red-500 flex items-center gap-1">
+                  <p
+                    id="email-error"
+                    role="alert"
+                    className="text-xs text-red-500 flex items-center gap-1"
+                  >
                     <span aria-hidden="true">⚠</span> {fieldErrors.email}
                   </p>
                 )}
@@ -260,27 +306,38 @@ function Contact() {
 
             {/* Message */}
             <div className="space-y-1.5">
-              <label htmlFor="message" className="text-sm font-medium text-gray-700">
+              <label
+                htmlFor="message"
+                className="text-sm font-medium text-gray-700"
+              >
                 Your message
               </label>
               <Textarea
                 id="message"
                 name="message"
                 placeholder={`Type your message here (min ${MSG_MIN} characters)`}
-                rows={5}
+                rows={4}
                 maxLength={MSG_MAX}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 aria-invalid={touched.message && !!fieldErrors.message}
-                aria-describedby={touched.message && fieldErrors.message ? "message-error" : undefined}
-                className={`min-h-28 bg-gray-50 focus:bg-white resize-none transition-colors ${
+                aria-describedby={
+                  touched.message && fieldErrors.message
+                    ? "message-error"
+                    : undefined
+                }
+                className={`min-h-24 sm:min-h-28 bg-gray-50 focus:bg-white resize-none transition-colors ${
                   touched.message && fieldErrors.message
                     ? "border-red-400 focus-visible:ring-red-300"
                     : "border-gray-200"
                 }`}
               />
               {touched.message && fieldErrors.message && (
-                <p id="message-error" role="alert" className="text-xs text-red-500 flex items-center gap-1">
+                <p
+                  id="message-error"
+                  role="alert"
+                  className="text-xs text-red-500 flex items-center gap-1"
+                >
                   <span aria-hidden="true">⚠</span> {fieldErrors.message}
                 </p>
               )}
@@ -311,7 +368,6 @@ function Contact() {
               </Button>
             </div>
           </form>
-
         </div>
       </div>
 
@@ -336,7 +392,6 @@ function Contact() {
           <p className="text-white/75 text-xs">© 2026 Agustin Zarate</p>
         </div>
       </div>
-
     </div>
   );
 }

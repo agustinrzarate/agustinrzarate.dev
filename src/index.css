@@ -123,10 +123,10 @@ html {
     font-family: "Onest", sans-serif;
   }
   .container-section {
-    @apply flex justify-center h-svh  px-12;
+    @apply flex justify-center h-svh px-5 sm:px-8 md:px-12;
   }
   .container-content {
-    @apply max-w-[1200px] grow py-28 max-h-full;
+    @apply max-w-[1200px] grow py-20 sm:py-24 md:py-28 max-h-full min-h-0 overflow-y-auto scrollbar-hide;
   }
 }
 

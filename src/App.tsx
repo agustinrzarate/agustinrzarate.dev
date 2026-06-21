@@ -1,7 +1,6 @@
 import { lazy, Suspense } from "react";
 import Navbar from "./components/ui/Navbar";
 import { SuspenseLoader } from "./components/ui/SuspenseLoader";
-import { useActiveSection } from "./hooks/useActiveSection";
 
 const Hero = lazy(() => import("./components/sections/Hero"));
 const About = lazy(() => import("./components/sections/About"));
@@ -11,7 +10,6 @@ const Contact = lazy(() => import("./components/sections/Contact"));
 // Content that mounts only after lazy sections have loaded, so useActiveSection
 // runs when hero/about/work/contact elements already exist in the DOM.
 function AppContent() {
-  const activeSection = useActiveSection();
 
   return (
     <>
@@ -27,7 +25,7 @@ function AppContent() {
         <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth scrollbar-hide">
           <Hero />
           <About />
-          <Work activeSection={activeSection} />
+          <Work />
           <Contact />
         </div>
       </main>

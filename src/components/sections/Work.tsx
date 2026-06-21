@@ -9,23 +9,10 @@ const WORK_ITEMS = [
     years: "2025 — Current",
     company: "GOIAR",
     projectName: "Gonnectia",
-    description:
-      "Financial solution for crypto investment management (mobile application and web back office). Collaborated on the UI/UX development of the application, architecture definition, and project implementation. Performed code reviews and developed features such as cash-in, cash-out, cryptocurrency buying and selling, among others. With a focus on project reusability, I was responsible for creating a template and its corresponding documentation, supported by a theoretical explanation of the implemented architecture and patterns. Unfortunately, this project was discontinued after the market crash in 2022.",
-    technologies: [
-      "React Native",
-      "React JS",
-      "JavaScript",
-      "TypeScript",
-      "Axios",
-      "Redux Sagas",
-      "Styled Components",
-      "React Testing Library",
-      "Jest",
-      "Cognito",
-      "Figma",
-    ],
+    description: " Soon...",
+    technologies: [],
   },
- 
+
   {
     years: "2024 — 2025",
     company: "GlobalTask",
@@ -38,8 +25,28 @@ const WORK_ITEMS = [
     years: "2022 — 2023",
     company: "GOIAR",
     projectName: "Gonnectia",
-    description:
-      "Financial solution for crypto investment management (mobile application and web back office). Collaborated on the UI/UX development of the application, architecture definition, and project implementation. Performed code reviews and developed features such as cash-in, cash-out, cryptocurrency buying and selling, among others. With a focus on project reusability, I was responsible for creating a template and its corresponding documentation, supported by a theoretical explanation of the implemented architecture and patterns. Unfortunately, this project was discontinued after the market crash in 2022.",
+    description: `At GOIAR, I had the pleasure of contributing to several projects, such as the development of digital wallets, a biometric identification processes for
+Buquebus, and an Intel advertising management platform.
+Additionally, I conducted technical interviews for candidates on various
+projects and took part in building communities within the company, being
+elected by my peers as one of the three leaders of the frontend community.
+
+
+Mentoring engineers within and outside my team on best practices,
+performance and advanced patterns.
+
+Identifying gaps around the org-wide frontend infrastructure, drafting
+proposals and implementing solutions that improved maintainability and
+developer workflow.
+
+Led the migration from JavaScript to TypeScript to enhance code quality
+and catch bugs at compile time.
+
+Created a full set of Figma prototypes for a fintech digital wallet,
+ensuring a consistent and intuitive user experience.
+- Code reviews.
+
+`,
     technologies: [
       "React Native",
       "React JS",
@@ -74,7 +81,7 @@ const WORK_ITEMS = [
   },
 ];
 
-function Work({ activeSection: _activeSection }: WorkProps) {
+function Work() {
   const { ref, inView } = useInView(0.05);
 
   return (

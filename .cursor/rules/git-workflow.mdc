@@ -1,0 +1,8 @@
+---
+description: Git commit workflow — always show the commit message before committing
+alwaysApply: true
+---
+
+# Git Commit Workflow
+
+Before running `git commit`, **always show the proposed commit message to the user and wait for explicit approval**. Never commit without confirmation.

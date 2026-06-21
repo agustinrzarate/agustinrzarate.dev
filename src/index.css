@@ -119,8 +119,8 @@ html {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-[#F9F9F9] text-foreground;
-    font-family: "Inter", sans-serif;
+    @apply bg-[#fafaf8] text-foreground;
+    font-family: "Onest", sans-serif;
   }
   .container-section {
     @apply flex justify-center h-svh  px-12;
@@ -179,3 +179,79 @@ html {
 .animate-grow {
   animation: grow 1s ease-out forwards;
 }
+
+/* ─── Accessibility ──────────────────────────────────────── */
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Global keyboard focus ring — respects components that override it */
+:focus-visible {
+  outline: 2px solid #7c3aed;
+  outline-offset: 2px;
+}
+
+/* ─── Wow animations ─────────────────────────────────────── */
+
+@keyframes blurInUp {
+  from { opacity: 0; filter: blur(12px); transform: translateY(28px); }
+  to   { opacity: 1; filter: blur(0);    transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.6); }
+  65%  { transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-100%); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lineGrow {
+  from { transform: scaleY(0); transform-origin: top; }
+  to   { transform: scaleY(1); transform-origin: top; }
+}
+
+/* Utility classes */
+.anim-blur-up   { animation: blurInUp   0.8s cubic-bezier(0.16,1,0.3,1) both; }
+.anim-fade-up   { animation: fadeInUp   0.7s cubic-bezier(0.16,1,0.3,1) both; }
+.anim-fade-left { animation: fadeInLeft 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+.anim-slide-right { animation: slideInRight 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+.anim-pop       { animation: popIn      0.6s cubic-bezier(0.34,1.56,0.64,1) both; }
+.anim-float     { animation: float      4s   ease-in-out infinite; }
+.anim-nav       { animation: navSlideDown 0.5s cubic-bezier(0.16,1,0.3,1) both; }
+.anim-line-grow { animation: lineGrow   1.2s cubic-bezier(0.16,1,0.3,1) both; }
+
+/* Hidden until triggered */
+.anim-wait { opacity: 0; }
+.anim-ready .anim-wait { opacity: unset; }

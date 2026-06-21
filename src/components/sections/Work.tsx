@@ -1,9 +1,5 @@
 import { useInView } from "@/hooks/useInView";
 
-interface WorkProps {
-  activeSection: string;
-}
-
 const WORK_ITEMS = [
   {
     years: "2025 — Current",

@@ -91,9 +91,8 @@ function Hero() {
                 Contact with me ↗
               </button>
               <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/resume_agustin-zarate.pdf"
+                download="Agustin_Zarate_Resume.pdf"
                 className="bg-white border border-gray-300 text-gray-800 px-6 py-3 rounded-full font-semibold text-sm hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all duration-200 flex items-center gap-2"
               >
                 ↓ Download resume

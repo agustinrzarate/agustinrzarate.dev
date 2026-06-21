@@ -65,7 +65,7 @@ function Contact() {
   function handleBlur(
     e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
-    const { name, value } = e.target;
+    const { name } = e.target;
     setTouched((prev) => ({ ...prev, [name]: true }));
 
     const form = e.target.form;
